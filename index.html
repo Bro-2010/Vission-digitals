@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bright Vision Digital Design - Web development, branding, promotional videos, social media management and SEO in Tamale, Ghana.">
+  <meta name="theme-color" content="#070d1a">
+  <title>Bright Vision Digital Design | Web & Digital Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: "#070d1a",
+            panel: "#0d1626",
+            cyan: "#22d3ee",
+            gold: "#f5c542"
+          },
+          boxShadow: {
+            glow: "0 0 35px rgba(34,211,238,.12)"
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:#070d1a; color:#f8fafc; }
+    ::selection { background:#22d3ee; color:#07111d; }
+    .glass { background:rgba(13,22,38,.72); backdrop-filter:blur(18px); border:1px solid rgba(148,163,184,.12); }
+    .gradient-text { background:linear-gradient(90deg,#fff,#22d3ee,#f5c542); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .hero-grid { background-image:linear-gradient(rgba(34,211,238,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.045) 1px,transparent 1px); background-size:45px 45px; }
+    .service-card,.portfolio-card,.testimonial-card { transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease; }
+    .service-card:hover,.portfolio-card:hover,.testimonial-card:hover { transform:translateY(-6px); border-color:rgba(34,211,238,.45); box-shadow:0 20px 60px rgba(0,0,0,.25); }
+    .portfolio-item.hidden-item { display:none; }
+    .nav-link { position:relative; }
+    .nav-link::after { content:""; position:absolute; left:0; bottom:-7px; width:0; height:2px; background:#22d3ee; transition:width .25s ease; }
+    .nav-link:hover::after { width:100%; }
+    .faq-answer { max-height:0; overflow:hidden; transition:max-height .3s ease; }
+    .faq.open .faq-answer { max-height:200px; }
+  </style>
+</head>
+<body class="antialiased">
+
+<header class="fixed top-0 left-0 right-0 z-50 glass">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="h-20 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan to-gold flex items-center justify-center text-slate-950 font-black">BV</div>
+        <div>
+          <div class="font-bold text-white leading-tight">Bright Vision</div>
+          <div class="text-[11px] text-cyan tracking-wider">DIGITAL DESIGN</div>
+        </div>
+      </a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm text-slate-300">
+        <a class="nav-link hover:text-white" href="#home">Home</a>
+        <a class="nav-link hover:text-white" href="#services">Services & Pricing</a>
+        <a class="nav-link hover:text-white" href="#portfolio">Portfolio</a>
+        <a class="nav-link hover:text-white" href="#reviews">Reviews</a>
+        <a class="nav-link hover:text-white" href="#about">About</a>
+        <a class="nav-link hover:text-white" href="#contact">Contact</a>
+      </nav>
+      <a href="https://wa.me/233599035746" target="_blank" class="hidden md:flex items-center gap-2 bg-cyan text-slate-950 font-bold px-5 py-3 rounded-xl hover:bg-cyan-300 transition">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Us
+      </a>
+      <button id="menuBtn" class="lg:hidden text-white"><i data-lucide="menu" class="w-7 h-7"></i></button>
+    </div>
+    <div id="mobileMenu" class="hidden pb-5 lg:hidden">
+      <nav class="flex flex-col gap-4 text-slate-300">
+        <a href="#home">Home</a><a href="#services">Services & Pricing</a><a href="#portfolio">Portfolio</a>
+        <a href="#reviews">Reviews</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <a href="https://wa.me/233599035746" target="_blank" class="bg-cyan text-slate-950 font-bold px-4 py-3 rounded-xl text-center">WhatsApp Us</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section id="home" class="relative min-h-screen pt-32 pb-20 hero-grid overflow-hidden">
+  <div class="absolute top-32 -left-40 w-96 h-96 bg-cyan/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-10 -right-40 w-96 h-96 bg-gold/10 rounded-full blur-3xl"></div>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan/20 bg-cyan/5 text-cyan text-sm mb-7">
+          <span class="w-2 h-2 rounded-full bg-cyan animate-pulse"></span> Tamale, Northern Region, Ghana
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.05]">
+          Digital solutions <span class="gradient-text">built to move your business forward.</span>
+        </h1>
+        <p class="mt-7 text-lg text-slate-300 leading-8 max-w-xl">
+          Bright Vision Digital Design helps businesses turn ideas into professional websites, powerful branding, engaging videos and digital experiences that work beautifully on every screen.
+        </p>
+        <div class="mt-9 flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="inline-flex justify-center items-center gap-2 bg-cyan text-slate-950 font-bold px-7 py-4 rounded-xl hover:bg-cyan-300 transition shadow-glow">
+            Get a Free Quote <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+          <a href="https://wa.me/233599035746" target="_blank" class="inline-flex justify-center items-center gap-2 border border-slate-700 bg-white/5 font-bold px-7 py-4 rounded-xl hover:border-cyan hover:text-cyan transition">
+            <i data-lucide="message-circle" class="w-5 h-5"></i> Chat on WhatsApp
+          </a>
+        </div>
+        <div class="mt-10 grid grid-cols-3 max-w-lg border-t border-slate-800 pt-7">
+          <div><strong class="text-2xl text-white">5+</strong><p class="text-sm text-slate-500 mt-1">Digital Services</p></div>
+          <div><strong class="text-2xl text-white">100%</strong><p class="text-sm text-slate-500 mt-1">Custom Work</p></div>
+          <div><strong class="text-2xl text-white">24/7</strong><p class="text-sm text-slate-500 mt-1">Online Support</p></div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-5 bg-cyan/10 blur-3xl"></div>
+        <div class="relative rounded-3xl overflow-hidden border border-slate-700 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85" alt="Professionals working on a digital project" class="w-full h-[520px] object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#070d1a] via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <div class="glass rounded-2xl p-5">
+              <div class="flex items-center justify-between">
+                <div><p class="text-sm text-cyan">BRIGHT VISION DIGITAL DESIGN</p><h3 class="text-xl font-bold mt-1">Ideas → Design → Digital Growth</h3></div>
+                <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold"><i data-lucide="sparkles"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="py-24 bg-[#090f1d]">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl mb-14">
+      <p class="text-cyan font-bold uppercase tracking-widest text-sm">What We Do</p>
+      <h2 class="text-3xl sm:text-5xl font-black mt-3">Professional digital services.</h2>
+      <p class="text-slate-400 mt-5 text-lg leading-8">Everything you need to build a stronger, more professional presence online—from your first idea to long-term digital growth.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="service-card rounded-2xl border border-slate-800 bg-[#0d1626] p-7">
+        <div class="flex justify-between items-start"><div class="w-14 h-14 rounded-2xl bg-cyan/10 text-cyan flex items-center justify-center"><i data-lucide="code-2" class="w-7 h-7"></i></div><span class="text-gold text-sm font-bold">GHS 1,500+</span></div>
+        <h3 class="text-xl font-bold mt-6">Web Development & Design</h3><p class="text-slate-400 mt-3 leading-7">Responsive websites, online stores, web apps and landing pages designed around your actual business goals.</p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-300"><li>✓ Mobile responsive design</li><li>✓ Business websites</li><li>✓ E-commerce stores</li><li>✓ Landing pages</li><li>✓ Web applications</li></ul>
+        <p class="mt-7 text-xs text-slate-500">Typical project range: GHS 1,500 – GHS 4,500</p>
+      </div>
+
+      <div class="service-card rounded-2xl border border-slate-800 bg-[#0d1626] p-7">
+        <div class="flex justify-between items-start"><div class="w-14 h-14 rounded-2xl bg-gold/10 text-gold flex items-center justify-center"><i data-lucide="palette" class="w-7 h-7"></i></div><span class="text-gold text-sm font-bold">GHS 300+</span></div>
+        <h3 class="text-xl font-bold mt-6">Graphic Design & Branding</h3><p class="text-slate-400 mt-3 leading-7">Visual identities that make businesses look trustworthy, memorable and professional.</p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-300"><li>✓ Logo design</li><li>✓ Brand identity</li><li>✓ Flyers & banners</li><li>✓ Business cards</li><li>✓ Social media designs</li></ul>
+        <p class="mt-7 text-xs text-slate-500">Typical project range: GHS 300 – GHS 1,200</p>
+      </div>
+
+      <div class="service-card rounded-2xl border border-slate-800 bg-[#0d1626] p-7">
+        <div class="flex justify-between items-start"><div class="w-14 h-14 rounded-2xl bg-cyan/10 text-cyan flex items-center justify-center"><i data-lucide="video" class="w-7 h-7"></i></div><span class="text-gold text-sm font-bold">GHS 800+</span></div>
+        <h3 class="text-xl font-bold mt-6">Promotional Video Production</h3><p class="text-slate-400 mt-3 leading-7">Short-form promotional videos and motion graphics created to capture attention and communicate your offer.</p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-300"><li>✓ Social media adverts</li><li>✓ Motion graphics</li><li>✓ Animated promotions</li><li>✓ Product videos</li><li>✓ Business adverts</li></ul>
+        <p class="mt-7 text-xs text-slate-500">Typical project range: GHS 800 – GHS 2,500</p>
+      </div>
+
+      <div class="service-card rounded-2xl border border-slate-800 bg-[#0d1626] p-7">
+        <div class="flex justify-between items-start"><div class="w-14 h-14 rounded-2xl bg-gold/10 text-gold flex items-center justify-center"><i data-lucide="megaphone" class="w-7 h-7"></i></div><span class="text-gold text-sm font-bold">GHS 600/mo</span></div>
+        <h3 class="text-xl font-bold mt-6">Social Media Management</h3><p class="text-slate-400 mt-3 leading-7">Consistent social media content and strategy designed to help businesses stay visible and attract customers.</p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-300"><li>✓ Content strategy</li><li>✓ Page setup</li><li>✓ Graphic posts</li><li>✓ Campaign support</li><li>✓ Monthly management</li></ul>
+        <p class="mt-7 text-xs text-slate-500">Monthly range: GHS 600 – GHS 1,800</p>
+      </div>
+
+      <div class="service-card rounded-2xl border border-slate-800 bg-[#0d1626] p-7">
+        <div class="flex justify-between items-start"><div class="w-14 h-14 rounded-2xl bg-cyan/10 text-cyan flex items-center justify-center"><i data-lucide="search-check" class="w-7 h-7"></i></div><span class="text-gold text-sm font-bold">GHS 400/mo</span></div>
+        <h3 class="text-xl font-bold mt-6">Website Maintenance & SEO</h3><p class="text-slate-400 mt-3 leading-7">Keep your website fast, secure, updated and easier for local customers to discover.</p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-300"><li>✓ Website updates</li><li>✓ Speed optimization</li><li>✓ Security updates</li><li>✓ SEO improvements</li><li>✓ Local search optimization</li></ul>
+        <p class="mt-7 text-xs text-slate-500">Starting from GHS 400 / month</p>
+      </div>
+
+      <div class="rounded-2xl p-7 border border-cyan/20 bg-gradient-to-br from-cyan/10 to-gold/5 flex flex-col justify-between">
+        <div><p class="text-cyan font-bold text-sm">HAVE A DIFFERENT PROJECT?</p><h3 class="text-2xl font-black mt-4">Let's discuss your idea.</h3><p class="text-slate-400 mt-4 leading-7">Every business is different. Tell us what you need and we'll recommend the right digital solution.</p></div>
+        <a href="#contact" class="mt-8 inline-flex items-center justify-center gap-2 bg-white text-slate-950 font-bold px-5 py-4 rounded-xl hover:bg-cyan transition">Start a Project <i data-lucide="arrow-up-right"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85" alt="Business team discussing a digital project" class="rounded-3xl w-full h-[480px] object-cover border border-slate-800">
+        <div class="absolute -bottom-6 -right-4 md:right-6 glass rounded-2xl p-5 max-w-xs">
+          <div class="flex gap-3"><div class="w-10 h-10 rounded-full bg-gold/10 text-gold flex items-center justify-center"><i data-lucide="users"></i></div><div><p class="font-bold">Built around your business</p><p class="text-xs text-slate-400 mt-1">We listen first, then design.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <p class="text-gold font-bold uppercase tracking-widest text-sm">Local Understanding. Global Standards.</p>
+        <h2 class="text-3xl sm:text-5xl font-black mt-4">Digital work that understands Ghanaian businesses.</h2>
+        <p class="text-slate-400 text-lg leading-8 mt-6">From a growing shop in Tamale to an ambitious online brand, Bright Vision Digital Design focuses on practical solutions that businesses can actually use.</p>
+        <div class="mt-8 space-y-5">
+          <div class="flex gap-4"><div class="text-cyan mt-1"><i data-lucide="check-circle"></i></div><div><h3 class="font-bold">Clear communication</h3><p class="text-slate-500 mt-1">You know what is being built, why it matters and what happens next.</p></div></div>
+          <div class="flex gap-4"><div class="text-cyan mt-1"><i data-lucide="check-circle"></i></div><div><h3 class="font-bold">Mobile-first thinking</h3><p class="text-slate-500 mt-1">Your customers should get a great experience on phones, tablets and computers.</p></div></div>
+          <div class="flex gap-4"><div class="text-cyan mt-1"><i data-lucide="check-circle"></i></div><div><h3 class="font-bold">Business-focused design</h3><p class="text-slate-500 mt-1">Beautiful visuals are important—but they should also help your business communicate and sell.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="py-24 bg-[#090f1d]">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-7 mb-12">
+      <div><p class="text-cyan font-bold uppercase tracking-widest text-sm">Selected Work</p><h2 class="text-3xl sm:text-5xl font-black mt-3">Work designed to make an impression.</h2></div>
+      <div class="flex flex-wrap gap-2">
+        <button data-filter="all" class="filter-btn px-4 py-2 rounded-lg bg-cyan text-slate-950 font-bold text-sm">All</button>
+        <button data-filter="web" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm">Web Design</button>
+        <button data-filter="branding" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm">Branding</button>
+        <button data-filter="video" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm">Video</button>
+        <button data-filter="social" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm">Social</button>
+      </div>
+    </div>
+    <div id="portfolioGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="portfolio-item portfolio-card group" data-category="web"><div class="rounded-2xl overflow-hidden border border-slate-800"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" alt="Business dashboard website"></div><div class="mt-4"><p class="text-xs text-cyan font-bold">WEB DESIGN</p><h3 class="font-bold mt-1">Business Website</h3></div></div>
+      <div class="portfolio-item portfolio-card group" data-category="branding"><div class="rounded-2xl overflow-hidden border border-slate-800"><img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=900&q=80" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" alt="Brand identity workspace"></div><div class="mt-4"><p class="text-xs text-gold font-bold">BRANDING</p><h3 class="font-bold mt-1">Brand Identity System</h3></div></div>
+      <div class="portfolio-item portfolio-card group" data-category="video"><div class="rounded-2xl overflow-hidden border border-slate-800"><img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=900&q=80" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" alt="Video production workspace"></div><div class="mt-4"><p class="text-xs text-cyan font-bold">VIDEO</p><h3 class="font-bold mt-1">Promotional Campaign</h3></div></div>
+      <div class="portfolio-item portfolio-card group" data-category="social"><div class="rounded-2xl overflow-hidden border border-slate-800"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=900&q=80" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" alt="Social media campaign"></div><div class="mt-4"><p class="text-xs text-gold font-bold">SOCIAL MEDIA</p><h3 class="font-bold mt-1">Social Campaign</h3></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="py-24">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-4xl">
+      <p class="text-gold font-bold uppercase tracking-widest text-sm">About Bright Vision</p>
+      <h2 class="text-3xl sm:text-5xl font-black mt-3">Built with ambition. Designed for businesses.</h2>
+      <p class="text-slate-400 text-lg leading-8 mt-7">Bright Vision Digital Design is a full-service digital design and development agency founded by <strong class="text-white">Abdul Basit</strong>.</p>
+      <p class="text-slate-400 text-lg leading-8 mt-5">Our goal is simple: help businesses present themselves professionally, reach more people and use technology more effectively.</p>
+      <div class="grid sm:grid-cols-3 gap-5 mt-10">
+        <div class="border border-slate-800 rounded-2xl p-6 bg-[#0d1626]"><i data-lucide="target" class="text-cyan"></i><h3 class="font-bold mt-5">Purpose</h3><p class="text-sm text-slate-500 mt-2">Create digital experiences that solve real business problems.</p></div>
+        <div class="border border-slate-800 rounded-2xl p-6 bg-[#0d1626]"><i data-lucide="lightbulb" class="text-gold"></i><h3 class="font-bold mt-5">Creativity</h3><p class="text-sm text-slate-500 mt-2">Combine design, technology and ideas to create something useful.</p></div>
+        <div class="border border-slate-800 rounded-2xl p-6 bg-[#0d1626]"><i data-lucide="shield-check" class="text-cyan"></i><h3 class="font-bold mt-5">Reliability</h3><p class="text-sm text-slate-500 mt-2">Communicate clearly and deliver work clients can depend on.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="py-24 bg-[#090f1d]">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <p class="text-cyan font-bold uppercase tracking-widest text-sm">Client Reviews</p>
+      <h2 class="text-3xl sm:text-5xl font-black mt-3">What clients say.</h2>
+      <p class="text-slate-400 mt-5">Great digital work starts with good communication and ends with something the client is proud to use.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="testimonial-card border border-slate-800 bg-[#0d1626] rounded-2xl p-7"><div class="flex text-gold gap-1">★ ★ ★ ★ ★</div><p class="text-slate-300 leading-7 mt-6">“Abdul was very easy to communicate with. He understood what I wanted and turned the idea into something much more professional than I expected.”</p><div class="mt-7 pt-5 border-t border-slate-800"><p class="font-bold">Local Business Owner</p><p class="text-sm text-slate-500 mt-1">Tamale, Ghana</p></div></div>
+      <div class="testimonial-card border border-slate-800 bg-[#0d1626] rounded-2xl p-7"><div class="flex text-gold gap-1">★ ★ ★ ★ ★</div><p class="text-slate-300 leading-7 mt-6">“The design looked clean on my phone and computer. I especially liked how quickly changes were made after I gave feedback.”</p><div class="mt-7 pt-5 border-t border-slate-800"><p class="font-bold">Business Owner</p><p class="text-sm text-slate-500 mt-1">Northern Region, Ghana</p></div></div>
+      <div class="testimonial-card border border-slate-800 bg-[#0d1626] rounded-2xl p-7"><div class="flex text-gold gap-1">★ ★ ★ ★ ★</div><p class="text-slate-300 leading-7 mt-6">“Bright Vision helped me present my business in a better way. The communication was clear and the final result looked modern and professional.”</p><div class="mt-7 pt-5 border-t border-slate-800"><p class="font-bold">Entrepreneur</p><p class="text-sm text-slate-500 mt-1">Tamale, Ghana</p></div></div>
+    </div>
+    <p class="text-center text-xs text-slate-600 mt-8">Client testimonials should be replaced with verified client feedback before publication.</p>
+  </div>
+</section>
+
+<section class="py-24">
+  <div class="max-w-4xl mx-auto px-5">
+    <div class="text-center mb-12"><p class="text-gold font-bold uppercase tracking-widest text-sm">Questions</p><h2 class="text-3xl sm:text-5xl font-black mt-3">Frequently asked questions.</h2></div>
+    <div class="space-y-3">
+      <div class="faq border border-slate-800 rounded-xl overflow-hidden"><button class="faq-btn w-full p-5 flex justify-between items-center text-left font-bold">How do I start a project?<i data-lucide="plus" class="faq-icon"></i></button><div class="faq-answer px-5"><p class="pb-5 text-slate-400 leading-7">Send us a message through WhatsApp or the contact form. Tell us what you want to build, your approximate budget and your preferred timeline.</p></div></div>
+      <div class="faq border border-slate-800 rounded-xl overflow-hidden"><button class="faq-btn w-full p-5 flex justify-between items-center text-left font-bold">Do you work with businesses outside Tamale?<i data-lucide="plus" class="faq-icon"></i></button><div class="faq-answer px-5"><p class="pb-5 text-slate-400 leading-7">Yes. Most digital projects can be handled remotely through WhatsApp, calls and online communication.</p></div></div>
+      <div class="faq border border-slate-800 rounded-xl overflow-hidden"><button class="faq-btn w-full p-5 flex justify-between items-center text-left font-bold">Can I request changes to my project?<i data-lucide="plus" class="faq-icon"></i></button><div class="faq-answer px-5"><p class="pb-5 text-slate-400 leading-7">Yes. Project revisions are discussed during the project so the final result matches the agreed requirements.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-24 bg-[#090f1d]">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14">
+      <div>
+        <p class="text-cyan font-bold uppercase tracking-widest text-sm">Start a Project</p>
+        <h2 class="text-3xl sm:text-5xl font-black mt-3">Have an idea? Let's build it.</h2>
+        <p class="text-slate-400 text-lg leading-8 mt-6">Tell us about your business, your project and what you want to achieve. We'll get back to you with the next steps.</p>
+        <div class="mt-10 space-y-5">
+          <a href="tel:+233599035746" class="flex gap-4 p-5 rounded-2xl border border-slate-800 hover:border-cyan transition"><div class="w-12 h-12 rounded-xl bg-cyan/10 text-cyan flex items-center justify-center"><i data-lucide="phone"></i></div><div><p class="text-sm text-slate-500">Phone / WhatsApp</p><p class="font-bold mt-1">+233 59 903 5746</p></div></a>
+          <a href="mailto:mr.shaibu776@gmail.com" class="flex gap-4 p-5 rounded-2xl border border-slate-800 hover:border-cyan transition"><div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center"><i data-lucide="mail"></i></div><div><p class="text-sm text-slate-500">Email</p><p class="font-bold mt-1">mr.shaibu776@gmail.com</p></div></a>
+          <div class="flex gap-4 p-5 rounded-2xl border border-slate-800"><div class="w-12 h-12 rounded-xl bg-cyan/10 text-cyan flex items-center justify-center"><i data-lucide="map-pin"></i></div><div><p class="text-sm text-slate-500">Location</p><p class="font-bold mt-1">Dungu Last Stop, Tamale, Northern Region, Ghana</p></div></div>
+        </div>
+      </div>
+
+      <div class="bg-[#0d1626] border border-slate-800 rounded-3xl p-6 sm:p-8">
+        <form id="contactForm">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div><label class="text-sm text-slate-400">Full Name</label><input id="name" required type="text" placeholder="Your name" class="mt-2 w-full bg-[#080f1d] border border-slate-700 rounded-xl px-4 py-3.5 outline-none focus:border-cyan transition"></div>
+            <div><label class="text-sm text-slate-400">Email</label><input id="email" required type="email" placeholder="you@example.com" class="mt-2 w-full bg-[#080f1d] border border-slate-700 rounded-xl px-4 py-3.5 outline-none focus:border-cyan transition"></div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5 mt-5">
+            <div><label class="text-sm text-slate-400">WhatsApp Number</label><input id="whatsapp" required type="tel" placeholder="059 XXX XXXX" class="mt-2 w-full bg-[#080f1d] border border-slate-700 rounded-xl px-4 py-3.5 outline-none focus:border-cyan transition"></div>
+            <div><label class="text-sm text-slate-400">Service Needed</label><select id="service" required class="mt-2 w-full bg-[#080f1d] border border-slate-700 rounded-xl px-4 py-3.5 outline-none focus:border-cyan transition"><option value="">Select service</option><option>Web Development</option><option>Graphic Design</option><option>Promotional Video</option><option>Social Media Management</option><option>Website Maintenance & SEO</option></select></div>
+          </div>
+          <div class="mt-5"><label class="text-sm text-slate-400">Budget Range</label><select id="budget" required class="mt-2 w-full bg-[#080f1d] border border-slate-700 rounded-xl px-4 py-3.5 outline-none focus:border-cyan transition"><option value="">Select budget</option><option>Under GHS 500</option><option>GHS 500 – GHS 1,500</option><option>GHS 1,500 – GHS 3,000</option><option>GHS 3,000 – GHS 5,000</option><option>GHS 5,000+</option><option>Not sure yet</option></select></div>
+          <div class="mt-5"><label class="text-sm text-slate-400">Project Details</label><textarea id="details" required rows="5" placeholder="Tell us about your project..." class="mt-2 w-full bg-[#080f1d] border border-slate-700 rounded-xl px-4 py-3.5 outline-none focus:border-cyan transition resize-none"></textarea></div>
+          <button type="submit" class="mt-6 w-full flex items-center justify-center gap-2 bg-cyan text-slate-950 font-black px-6 py-4 rounded-xl hover:bg-cyan-300 transition">Send Project Request <i data-lucide="send" class="w-5 h-5"></i></button>
+          <p class="text-xs text-slate-600 text-center mt-4">Your project information will be prepared for WhatsApp.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-slate-800 bg-[#050a13]">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3"><div class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan to-gold text-slate-950 flex items-center justify-center font-black">BV</div><div><p class="font-bold">Bright Vision Digital Design</p><p class="text-xs text-cyan">Empowering Businesses with World-Class Web & Digital Solutions</p></div></div>
+        <p class="text-slate-500 mt-5 max-w-md leading-7">Professional websites, branding, promotional videos and digital solutions for ambitious businesses.</p>
+        <div class="mt-6 flex gap-3"><a href="https://wa.me/233599035746" target="_blank" class="w-11 h-11 rounded-xl bg-green-500/10 text-green-400 flex items-center justify-center hover:bg-green-500/20"><i data-lucide="message-circle"></i></a><a href="mailto:mr.shaibu776@gmail.com" class="w-11 h-11 rounded-xl bg-cyan/10 text-cyan flex items-center justify-center hover:bg-cyan/20"><i data-lucide="mail"></i></a></div>
+      </div>
+      <div><h3 class="font-bold mb-5">Quick Links</h3><div class="space-y-3 text-sm text-slate-500"><a href="#home" class="block hover:text-cyan">Home</a><a href="#services" class="block hover:text-cyan">Services</a><a href="#portfolio" class="block hover:text-cyan">Portfolio</a><a href="#about" class="block hover:text-cyan">About</a><a href="#contact" class="block hover:text-cyan">Contact</a></div></div>
+      <div><h3 class="font-bold mb-5">Contact</h3><div class="space-y-4 text-sm text-slate-500"><a href="tel:+233599035746" class="block hover:text-cyan">+233 59 903 5746</a><a href="mailto:mr.shaibu776@gmail.com" class="block hover:text-cyan break-all">mr.shaibu776@gmail.com</a><p>Dungu Last Stop,<br>Tamale, Northern Region,<br>Ghana</p></div></div>
+    </div>
+    <div class="border-t border-slate-800 mt-12 pt-7 flex flex-col sm:flex-row justify-between gap-4 text-sm text-slate-600">
+      <p>© 2026 Bright Vision Digital Design. All Rights Reserved.</p><p>Founded by <span class="text-slate-400">Abdul Basit</span></p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/233599035746" target="_blank" aria-label="Chat with Bright Vision on WhatsApp" class="fixed bottom-5 right-5 z-40 w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition"><i data-lucide="message-circle" class="w-7 h-7"></i></a>
+
+<script>
+  lucide.createIcons();
+
+  const menuBtn=document.getElementById("menuBtn");
+  const mobileMenu=document.getElementById("mobileMenu");
+  menuBtn.addEventListener("click",()=>mobileMenu.classList.toggle("hidden"));
+  document.querySelectorAll("#mobileMenu a").forEach(link=>link.addEventListener("click",()=>mobileMenu.classList.add("hidden")));
+
+  const filterButtons=document.querySelectorAll(".filter-btn");
+  const portfolioItems=document.querySelectorAll(".portfolio-item");
+  filterButtons.forEach(button=>{
+    button.addEventListener("click",()=>{
+      const filter=button.dataset.filter;
+      filterButtons.forEach(btn=>{
+        btn.classList.remove("bg-cyan","text-slate-950","font-bold");
+        btn.classList.add("bg-slate-800","text-slate-300");
+      });
+      button.classList.remove("bg-slate-800","text-slate-300");
+      button.classList.add("bg-cyan","text-slate-950","font-bold");
+      portfolioItems.forEach(item=>{
+        if(filter==="all"||item.dataset.category===filter)item.classList.remove("hidden-item");
+        else item.classList.add("hidden-item");
+      });
+    });
+  });
+
+  document.querySelectorAll(".faq-btn").forEach(button=>{
+    button.addEventListener("click",()=>{
+      const faq=button.parentElement;
+      const icon=button.querySelector(".faq-icon");
+      document.querySelectorAll(".faq").forEach(item=>{
+        if(item!==faq){
+          item.classList.remove("open");
+          const otherIcon=item.querySelector(".faq-icon");
+          if(otherIcon)otherIcon.setAttribute("data-lucide","plus");
+        }
+      });
+      faq.classList.toggle("open");
+      icon.setAttribute("data-lucide",faq.classList.contains("open")?"minus":"plus");
+      lucide.createIcons();
+    });
+  });
+
+  document.getElementById("contactForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    const name=document.getElementById("name").value.trim();
+    const email=document.getElementById("email").value.trim();
+    const whatsapp=document.getElementById("whatsapp").value.trim();
+    const service=document.getElementById("service").value;
+    const budget=document.getElementById("budget").value;
+    const details=document.getElementById("details").value.trim();
+    const message=`Hello Bright Vision Digital Design,
+
+I would like to discuss a project.
+
+Name: ${name}
+Email: ${email}
+WhatsApp: ${whatsapp}
+
+Service Needed: ${service}
+Budget: ${budget}
+
+Project Details:
+${details}
+
+I found Bright Vision Digital Design through your website.`;
+    window.open("https://wa.me/233599035746?text="+encodeURIComponent(message),"_blank");
+  });
+</script>
+</body>
+</html>
